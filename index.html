@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomten i Uppsala | Hyr jultomte till julafton</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; background-color: #fcfcfc; }
+        header { background: #b30000; color: white; text-align: center; padding: 4rem 1rem; }
+        header h1 { margin: 0; font-size: 2.5rem; }
+        header p { font-size: 1.2rem; margin-top: 0.5rem; }
+        .container { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        
+        /* Formulär-design */
+        .form-box { background: white; border: 1px solid #ddd; padding: 2rem; margin: 2rem 0; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .form-box h3 { margin-top: 0; color: #b30000; font-size: 1.5rem; border-bottom: 2px solid #fff3f3; padding-bottom: 0.5rem; }
+        .form-group { margin-bottom: 1.2rem; }
+        label { display: block; font-weight: bold; margin-bottom: 0.3rem; font-size: 0.95rem; }
+        input[type="text"], input[type="email"], input[type="tel"], select, textarea { 
+            width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-size: 1rem;
+        }
+        input:focus, select:focus, textarea:focus { border-color: #b30000; outline: none; box-shadow: 0 0 5px rgba(179, 0, 0, 0.2); }
+        .btn { display: block; width: 100%; background: #b30000; color: white; padding: 1rem; text-decoration: none; border-radius: 4px; font-weight: bold; border: none; font-size: 1.1rem; cursor: pointer; transition: background 0.2s; }
+        .btn:hover { background: #800000; }
+        
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+        .feature-card { background: #f9f9f9; padding: 1.5rem; border-radius: 6px; border: 1px solid #eee; }
+        .info-box { background: #f5f5f5; border-radius: 6px; padding: 1.5rem; margin-top: 2rem; font-size: 0.95rem; }
+        footer { text-align: center; padding: 2rem; background: #222; color: #ccc; font-size: 0.9rem; margin-top: 4rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Tomten i Uppsala</h1>
+        <p>Låt en riktig jultomte sprida magin i år – en jultradition som varar länge</p>
+    </header>
+
+    <div class="container">
+        <h2>Boka årets mest magiska möte</h2>
+        <p>Har ni svårt att bestämma vem som ska klä ut sig och "köpa tidningen" i år? Slipp stressen och låt mig ta hand om det! Som erfaren och engagerad jultomte är jag redo att skapa oförglömliga stunder för både stora och små under julfirandet i Uppsala.</p>
+        
+        <p>Med en genuin tomteupplevelse – fylld med värme, glada skratt och julklappar – ser jag till att julstämningen blir på topp. Priset är <strong>1 000 kr</strong> för ett besök som tar <strong>cirka 20 minuter</strong>, vilket är alldeles lagom för att hinna med allt det viktiga:</p>
+        
+        <ul>
+            <li><strong>Tomten knackar på dörren</strong> och sprider julens magi direkt när han stiger in.</li>
+            <li><strong>Hälsar personligt</strong> på barnen och hela familjen.</li>
+            <li><strong>Utdelning av julklappar</strong> ur tomtesäcken.</li>
+            <li><strong>Gott om tid för fotografering</strong> så ni får ett minne för livet.</li>
+        </ul>
+
+        <div class="form-box">
+            <h3>Bokningsförfrågan julafton</h3>
+            <p>Pris: 1 000 kr per besök (ca 20 min). Antalet tider i Uppsala är begränsat och platserna fylls upp snabbt. Skicka din förfrågan idag!</p>
+            
+            <form name="tomtebokning" method="POST" action="/tack.html" data-netlify="true">
+                <input type="hidden" name="form-name" value="tomtebokning" />
+                
+                <div class="form-group">
+                    <label for="namn">Ditt fullständiga namn</label>
+                    <input type="text" id="namn" name="namn" required placeholder="Sven Svensson">
+                </div>
+
+                <div class="form-group">
+                    <label for="epost">E-postadress</label>
+                    <input type="email" id="epost" name="epost" required placeholder="namn@exempel.se">
+                </div>
+
+                <div class="form-group">
+                    <label for="telefon">Telefonnummer</label>
+                    <input type="tel" id="telefon" name="telefon" required placeholder="070-123 45 67">
+                </div>
+
+                <div class="form-group">
+                    <label for="adress">Gatuadress</label>
+                    <input type="text" id="adress" name="adress" required placeholder="Storgatan 12">
+                </div>
+
+                <div class="form-group">
+                    <label for="stadsdel">Stadsdel / Område i Uppsala</label>
+                    <select id="stadsdel" name="stadsdel" required>
+                        <option value="" disabled selected>Välj område...</option>
+                        <option value="Luthagen/Eriksberg">Luthagen / Eriksberg</option>
+                        <option value="Flogsta/Ekeby">Flogsta / Ekeby</option>
+                        <option value="Svartbäcken/Nyby">Svartbäcken / Nyby</option>
+                        <option value="Gränby/Salabacke">Gränby / Sala backe</option>
+                        <option value="Kvarngärdet/Centrum">Kvarngärdet / Centrum</option>
+                        <option value="Gottsunda/Valsätra">Gottsunda / Valsätra</option>
+                        <option value="Sunnersta/Ulleråker">Sunnersta / Ulleråker</option>
+                        <option value="Övrigt">Utanför stan / Övrigt (ange i meddelande)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="tid">Önskat tidsintervall på julafton</label>
+                    <select id="tid" name="tid" required>
+                        <option value="" disabled selected>Välj tid...</option>
+                        <option value="Förmiddag (11:00 - 13:30)">Förmiddag (11:00 - 13:30)</option>
+                        <option value="Efter Kalle Anka (13:30 - 16:30)">Efter Kalle Anka (13:30 - 16:30) — Mest populär!</option>
+                        <option value="Kväll (16:30 - 20:00)">Kväll (16:30 - 20:00)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="meddelande">Information om barnen, flexibilitet eller speciella önskemål</label>
+                    <textarea id="meddelande" name="meddelande" rows="4" placeholder="Skriv gärna här om ni kan vara flexibla med tiden för att lättare få en plats, antal barn, eller om ni har husdjur..."></textarea>
+                </div>
+
+                <button type="submit" class="btn">Skicka förfrågan till Tomten</button>
+            </form>
+        </div>
+
+        <h2>Varför välja Tomten i Uppsala?</h2>
+        <div class="features">
+            <div class="feature-card">
+                <h3>⭐ Tryggt & professionellt</h3>
+                <p>Slipp stressen. Jag sätter punktlighet och barnens förväntan i fokus för att skapa sann julglädje.</p>
+            </div>
+            <div class="feature-card">
+                <h3>📍 Strikt ruttplanering</h3>
+                <p>Genom noggrann planering utifrån Uppsalas stadsdelar ser jag till att hålla utlovade tider.</p>
+            </div>
+            <div class="feature-card">
+                <h3>✨ Äkta upplevelse</h3>
+                <p>Inga billiga plastmasker. Jag bär en högkvalitativ, tung tomtedräkt med ett fint och naturtroget skägg.</p>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h3>💡 Bra att veta inför besöket</h3>
+            <p><strong>Trygg bokning:</strong> Dagen före julafton hör jag av mig via telefon eller sms för att stämma av de sista detaljerna, såsom var säcken lämnas och om det är något särskilt jag bör veta om barnen.</p>
+            <p><strong>F-skatt & Betalning:</strong> Jag innehar F-skatt. I priset ingår moms och skatt betalas på alla inkomster. Betalning sker smidigast via Swish efter besöket, men faktura kan utfärdas vid önskemål.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; Tomten i Uppsala (tomteniuppsala.se). Alla rättigheter förbehållna.</p>
+    </footer>
+
+</body>
+</html>
