@@ -49,30 +49,68 @@
             <li><strong>Gott om tid för fotografering</strong> så ni får ett minne för livet.</li>
         </ul>
 
-        <form name="kontakt" method="POST" action="/tack.html" netlify class="space-y-6">
-            <input type="hidden" name="form-name" value="kontakt">
+        <div class="form-box">
+            <h3>Bokningsförfrågan julafton</h3>
+            <p>Pris från 850 kr per besök (ca 20 min). Antalet tider i Uppsala är begränsat och platserna fylls upp snabbt. Skicka din förfrågan idag!</p>
             
-            <div>
-                <label class="block text-sm font-semibold mb-2">Ditt eller förälderns namn</label>
-                <input type="text" name="namn" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-orange-600 bg-white">
-            </div>
-            <div>
-                <label class="block text-sm font-semibold mb-2">E-postadress</label>
-                <input type="email" name="epost" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-orange-600 bg-white">
-            </div>
-            <div>
-                <label class="block text-sm font-semibold mb-2">Nuvarande nivå / Skolår & Ämne</label>
-                <input type="text" name="niva" placeholder="T.ex. Matte 2c på gymnasiet" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-orange-600 bg-white">
-            </div>
-            <div>
-                <label class="block text-sm font-semibold mb-2">Meddelande (Berätta kort om målet med läxhjälpen)</label>
-                <textarea name="meddelande" rows="4" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-orange-600 bg-white"></textarea>
-            </div>
-            <button type="submit" class="w-full bg-orange-600 text-white font-bold py-4 rounded-xl hover:bg-orange-700 transition cursor-pointer shadow-xs">
-                Skicka förfrågan
-            </button>
-        </form>
-    </section>
+            <form name="tomtebokning" method="POST" action="/tack.html" netlify>
+                <input type="hidden" name="form-name" value="tomtebokning" />
+                
+                <div class="form-group">
+                    <label for="namn">Ditt fullständiga namn</label>
+                    <input type="text" id="namn" name="namn" required placeholder="Sven Svensson">
+                </div>
+
+                <div class="form-group">
+                    <label for="epost">E-postadress</label>
+                    <input type="email" id="epost" name="epost" required placeholder="namn@exempel.se">
+                </div>
+
+                <div class="form-group">
+                    <label for="telefon">Telefonnummer</label>
+                    <input type="tel" id="telefon" name="telefon" required placeholder="070-123 45 67">
+                </div>
+
+                <div class="form-group">
+                    <label for="adress">Gatuadress</label>
+                    <input type="text" id="adress" name="adress" required placeholder="Storgatan 12">
+                </div>
+
+                <div class="form-group">
+                    <label for="stadsdel">Stadsdel / Område i Uppsala</label>
+                    <select id="stadsdel" name="stadsdel" required>
+                        <option value="" disabled selected>Välj område...</option>
+                        <option value="Luthagen/Eriksberg">Luthagen / Eriksberg</option>
+                        <option value="Flogsta/Ekeby">Flogsta / Ekeby</option>
+                        <option value="Svartbäcken/Nyby">Svartbäcken / Nyby</option>
+                        <option value="Gränby/Salabacke">Gränby / Sala backe</option>
+                        <option value="Kvarngärdet/Centrum">Kvarngärdet / Centrum</option>
+                        <option value="Gottsunda/Valsätra">Gottsunda / Valsätra</option>
+                        <option value="Sunnersta/Ulleråker">Sunnersta / Ulleråker</option>
+                        <option value="Övrigt">Utanför stan / Övrigt (ange i meddelande)</option>
+                    </select>
+                </div>
+
+<div class="form-group">
+    <label for="tid">Önskat tidsintervall på julafton (ca 20 min besök)</label>
+    <select id="tid" name="tid" required>
+        <option value="" disabled selected>Välj tidsfönster...</option>
+        <option value="Förmiddag (11:00 - 14:30) - 1000 kr">Förmiddag / Före Kalle Anka (11:00 - 15:00) — 1000 kr</option>
+        <option value="Efter Kalle Anka (16:00 - 18:00) - 1400 kr">Efter Kalle Anka / Prime time (16:00 - 18:00) — 1400 kr</option>
+        <option value="Kväll (18:00 - 20:00) - 1000 kr">Kväll (18:00 - 20:00) — 1000 kr</option>
+        <option value="Flexibel tid - 850 kr">Flexibel tid (Tomten föreslår tid utifrån rutt) — 850 kr</option>
+    </select>
+</div>
+
+                <div class="form-group">
+                    <label for="meddelande">Information om barnen, flexibilitet eller speciella önskemål</label>
+                    <textarea id="meddelande" name="meddelande" rows="4" placeholder="Skriv gärna här om ni kan vara flexibla med tiden för att lättare få en plats, antal barn, eller om ni har husdjur..."></textarea>
+                </div>
+
+                <button type="submit" class="btn">Skicka förfrågan till Tomten</button>
+            </form>
+        </div>
+
         <h2>Varför välja Tomten i Uppsala?</h2>
         <div class="features">
             <div class="feature-card">
